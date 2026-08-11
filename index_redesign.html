@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aprenda a criar vídeos impossíveis com inteligência artificial, nostalgia, carros clássicos e efeitos cinematográficos." />
+  <meta name="theme-color" content="#07090d" />
+  <title>Sandro Silva | Vídeos Impossíveis com IA</title>
+
+  <!-- Meta Pixel Code - preservado -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)n=f.fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1021838480596158');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1021838480596158&ev=PageView&noscript=1"
+      alt="" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root{
+      --bg:#07090d;
+      --bg-2:#0b0e13;
+      --panel:#10151d;
+      --panel-2:#151c26;
+      --text:#f7f8fb;
+      --muted:#9ca9b9;
+      --line:rgba(255,255,255,.10);
+      --line-strong:rgba(255,255,255,.18);
+      --cyan:#19c9ff;
+      --blue:#2f7cff;
+      --orange:#ff922f;
+      --peach:#ffc078;
+      --green:#7ce0b1;
+      --shadow:0 28px 90px rgba(0,0,0,.42);
+      --radius:28px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(25,201,255,.09), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(255,146,47,.08), transparent 26%),
+        var(--bg);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,a{-webkit-tap-highlight-color:transparent}
+    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .section{padding:110px 0}
+
+    .nav{
+      position:fixed;
+      inset:0 0 auto 0;
+      z-index:100;
+      background:linear-gradient(180deg,rgba(7,9,13,.88),rgba(7,9,13,.54));
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:900;letter-spacing:.08em;font-size:.98rem}
+    .brand span{color:var(--cyan)}
+    .nav-links{display:flex;align-items:center;gap:22px;color:#c7d0db;font-size:.88rem}
+    .nav-links a:not(.btn):hover{color:#fff}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 22px;border-radius:999px;font-weight:850;
+      border:1px solid transparent;transition:.22s ease;cursor:pointer;
+      letter-spacing:-.01em;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--cyan),var(--blue));
+      color:#041019;box-shadow:0 16px 38px rgba(25,201,255,.20);
+    }
+    .btn-orange{
+      background:linear-gradient(135deg,var(--peach),var(--orange));
+      color:#1d0d00;box-shadow:0 16px 38px rgba(255,146,47,.18);
+    }
+    .btn-ghost{border-color:var(--line-strong);background:rgba(255,255,255,.04)}
+
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;padding:7px 12px;
+      border:1px solid rgba(25,201,255,.25);border-radius:999px;
+      color:#c9f3ff;background:rgba(25,201,255,.06);
+      font-size:.76rem;font-weight:850;text-transform:uppercase;letter-spacing:.09em;
+    }
+    .eyebrow.orange{border-color:rgba(255,146,47,.26);color:#ffd8b4;background:rgba(255,146,47,.06)}
+
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{letter-spacing:-.045em}
+    h1{font-size:clamp(3.35rem,9vw,7.6rem);line-height:.90;margin:22px 0 24px;max-width:10ch}
+    h2{font-size:clamp(2.4rem,6vw,5.7rem);line-height:.96;margin:0 0 20px}
+    h3{font-size:clamp(1.5rem,3vw,2.35rem);line-height:1.03;margin-bottom:12px}
+    .lead{font-size:clamp(1.02rem,1.7vw,1.25rem);color:var(--muted);max-width:720px}
+    .gradient-text{background:linear-gradient(90deg,#fff 0%,#7cdcff 44%,#ffb36a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    /* HERO */
+    .hero{min-height:100svh;display:grid;align-items:end;position:relative;overflow:hidden;padding:150px 0 70px}
+    .hero-media{position:absolute;inset:0;z-index:0}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:saturate(.92) contrast(1.04)}
+    .hero-media:after{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(7,9,13,.97) 0%,rgba(7,9,13,.82) 38%,rgba(7,9,13,.34) 68%,rgba(7,9,13,.56) 100%),
+        linear-gradient(180deg,rgba(7,9,13,.20) 0%,rgba(7,9,13,.12) 52%,var(--bg) 100%);
+    }
+    .hero-content{position:relative;z-index:2;max-width:780px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .micro-proof{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+    .micro-proof span{font-size:.88rem;color:#d7dee7;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:8px 12px;border-radius:999px;backdrop-filter:blur(8px)}
+
+    /* METRICS */
+    .metrics-wrap{position:relative;z-index:5;margin-top:-28px}
+    .metrics{
+      display:grid;grid-template-columns:1fr 1fr 1.35fr;border:1px solid var(--line);
+      border-radius:22px;overflow:hidden;background:rgba(13,17,24,.86);backdrop-filter:blur(20px);box-shadow:var(--shadow)
+    }
+    .metric{padding:26px 28px;min-height:120px;display:flex;flex-direction:column;justify-content:center}
+    .metric+.metric{border-left:1px solid var(--line)}
+    .metric strong{font-size:clamp(2rem,4vw,3.8rem);line-height:.9;letter-spacing:-.06em}
+    .metric span{margin-top:10px;color:var(--muted);font-size:.9rem}
+    .metric-note{color:#dbe4ef!important;line-height:1.5}
+
+    /* SHOWCASE */
+    .showcase-head{max-width:880px;margin-bottom:50px}
+    .showcase-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
+    .showcase-card{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:620px;background:#0a0c10;box-shadow:var(--shadow)}
+    .showcase-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .showcase-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(5,7,10,.20) 50%,rgba(5,7,10,.96) 100%)}
+    .showcase-copy{position:absolute;z-index:2;left:32px;right:32px;bottom:30px}
+    .showcase-copy p{color:#cbd4df;max-width:540px;margin-bottom:0}
+    .showcase-side{display:grid;gap:22px}
+    .mini-visual{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);min-height:299px;background:var(--panel)}
+    .mini-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .mini-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.82))}
+    .mini-label{position:absolute;z-index:2;left:24px;bottom:22px;right:24px;font-weight:850;font-size:1.2rem}
+
+    /* PRODUCTS EDITORIAL */
+    .product-story{display:grid;grid-template-columns:1fr 1fr;min-height:720px;border-top:1px solid var(--line)}
+    .product-story:last-child{border-bottom:1px solid var(--line)}
+    .product-media{position:relative;overflow:hidden;background:#0b0e13}
+    .product-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .product-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(7,9,13,.80))}
+    .product-copy{display:flex;align-items:center;padding:clamp(40px,7vw,90px);background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+    .product-copy-inner{max-width:520px}
+    .product-copy p{color:var(--muted);font-size:1.02rem}
+    .feature-list{list-style:none;padding:0;margin:28px 0;display:grid;gap:12px}
+    .feature-list li{display:flex;gap:10px;color:#e1e7ee}
+    .feature-list li:before{content:"✓";color:var(--cyan);font-weight:900}
+    .product-story.orange .feature-list li:before{color:var(--orange)}
+    .price{margin:28px 0 20px}
+    .price .old{display:block;color:var(--muted);font-size:.95rem}
+    .price .now{display:block;font-size:clamp(2.3rem,5vw,4rem);font-weight:950;letter-spacing:-.06em;line-height:1}
+    .price.cyan .now{color:var(--cyan)}
+    .price.orange .now{color:var(--orange)}
+
+    /* PROCESS - cinematic sticky */
+    .process{background:#050607;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .process-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px;align-items:start}
+    .process-intro{position:sticky;top:120px}
+    .process-intro p{color:var(--muted);max-width:440px}
+    .process-steps{display:grid;gap:18px}
+    .process-step{
+      min-height:340px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+      background:linear-gradient(145deg,#111720,#0a0d12);padding:34px;display:flex;flex-direction:column;justify-content:flex-end;
+      position:relative;
+    }
+    .process-step:before{content:attr(data-step);position:absolute;top:28px;left:30px;font-size:.76rem;font-weight:900;letter-spacing:.14em;color:var(--cyan)}
+    .process-step.orange:before{color:var(--orange)}
+    .process-step h3{font-size:clamp(2rem,4.5vw,4rem);max-width:8ch;margin-bottom:12px}
+    .process-step p{color:var(--muted);max-width:540px;margin:0}
+    .process-step .ghost-word{position:absolute;right:-12px;top:10px;font-size:clamp(5rem,12vw,10rem);font-weight:950;letter-spacing:-.08em;color:rgba(255,255,255,.028);line-height:.8;pointer-events:none}
+
+    /* VIDEOS */
+    .video-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+    .video-head p{max-width:510px;color:var(--muted);margin-bottom:0}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .video-card{border:1px solid var(--line);background:var(--panel);border-radius:22px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.22)}
+    .video-frame{aspect-ratio:9/16;background:#000}
+    .video-frame iframe{width:100%;height:100%;border:0;display:block}
+    .video-caption{padding:15px 17px;color:var(--muted);font-size:.88rem}
+
+    /* AUTHOR */
+    .author-card{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:linear-gradient(145deg,#101620,#0b0e13);box-shadow:var(--shadow)}
+    .author-visual{min-height:500px;position:relative;overflow:hidden}
+    .author-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .author-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(11,14,19,.7) 100%)}
+    .author-copy{padding:clamp(36px,6vw,78px);display:flex;flex-direction:column;justify-content:center}
+    .author-copy p{color:var(--muted)}
+    .author-stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px}
+    .author-stats strong{display:block;font-size:1.65rem;letter-spacing:-.04em}
+    .author-stats span{color:var(--muted);font-size:.84rem}
+
+    /* FAQ */
+    .faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+    .faq-intro{position:sticky;top:120px;align-self:start}
+    .faq{display:grid;gap:12px}
+    details{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:0 20px}
+    summary{cursor:pointer;font-weight:800;padding:20px 0;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details p{margin:0 0 20px;color:var(--muted)}
+
+    /* FINAL CTA */
+    .final-cta{padding:90px 24px;text-align:center;border:1px solid var(--line);border-radius:34px;background:
+      radial-gradient(circle at 20% 20%,rgba(25,201,255,.14),transparent 30%),
+      radial-gradient(circle at 80% 35%,rgba(255,146,47,.12),transparent 30%),
+      #0c1118;box-shadow:var(--shadow)}
+    .final-cta h2{max-width:11ch;margin-left:auto;margin-right:auto}
+    .final-cta p{max-width:650px;margin:0 auto 28px;color:var(--muted)}
+    .final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    footer{padding:30px 0 90px;color:var(--muted);font-size:.84rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:26px}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    .floating{
+      position:fixed;right:16px;bottom:16px;z-index:90;display:none;
+      min-height:52px;padding:0 18px;border-radius:999px;background:linear-gradient(135deg,var(--cyan),var(--blue));
+      color:#041019;font-weight:900;box-shadow:0 18px 45px rgba(25,201,255,.25)
+    }
+
+    @media (max-width:980px){
+      .nav-links a:not(.btn){display:none}
+      .showcase-grid,.product-story,.process-grid,.author-card,.faq-wrap{grid-template-columns:1fr}
+      .product-story{min-height:auto}
+      .product-media{min-height:560px}
+      .product-story:nth-child(even) .product-media{order:0}
+      .process-intro,.faq-intro{position:relative;top:auto}
+      .video-grid{grid-template-columns:repeat(2,1fr)}
+      .metrics{grid-template-columns:1fr 1fr}
+      .metric:nth-child(3){grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
+      .author-visual{min-height:440px}
+    }
+
+    @media (max-width:680px){
+      .section{padding:78px 0}
+      .nav-inner{height:64px}
+      .nav-links .btn{min-height:42px;padding:0 15px;font-size:.82rem}
+      .hero{padding:120px 0 58px;min-height:94svh}
+      .hero-media:after{background:linear-gradient(180deg,rgba(7,9,13,.35) 0%,rgba(7,9,13,.60) 40%,rgba(7,9,13,.96) 76%,var(--bg) 100%)}
+      .hero-content{padding-top:34vh}
+      .hero-actions .btn{width:100%}
+      .metrics{grid-template-columns:1fr}
+      .metric+.metric,.metric:nth-child(3){border-left:0;border-top:1px solid var(--line);grid-column:auto}
+      .showcase-grid{display:block}
+      .showcase-card{min-height:580px;margin-bottom:16px}
+      .showcase-side{grid-template-columns:1fr 1fr;gap:12px}
+      .mini-visual{min-height:220px}
+      .product-media{min-height:460px}
+      .product-copy{padding:42px 24px 52px}
+      .process-step{min-height:300px;padding:28px 24px}
+      .video-head{display:block}
+      .video-grid{grid-template-columns:1fr}
+      .author-visual{min-height:420px}
+      .faq-wrap{gap:28px}
+      .floating{display:flex;align-items:center}
+      footer{padding-bottom:100px}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio">SANDRO <span>IA</span></a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#resultados">Resultados</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#metodo">Método</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn btn-primary" href="#produtos">Começar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: usa o mesmo asset da pasta atual -->
+    <section class="hero" id="inicio">
+      <div class="hero-media" aria-hidden="true">
+        <img src="img/03.png" alt="" />
+      </div>
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="eyebrow">IA + nostalgia + criatividade</span>
+          <h1>Crie cenas que <span class="gradient-text">nunca aconteceram.</span></h1>
+          <p class="lead">
+            Aprenda a transformar uma ideia em imagens e vídeos com inteligência artificial,
+            usando prompts, animação e edição simples — mesmo começando do zero.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#produtos">Quero criar meu primeiro vídeo</a>
+            <a class="btn btn-ghost" href="#resultados">Ver os resultados</a>
+          </div>
+          <div class="micro-proof">
+            <span>Passo a passo direto</span>
+            <span>Prompts prontos</span>
+            <span>Acesso digital</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container metrics-wrap reveal">
+      <div class="metrics">
+        <div class="metric">
+          <strong>+15 MM</strong>
+          <span>visualizações nos conteúdos</span>
+        </div>
+        <div class="metric">
+          <strong>50 K</strong>
+          <span>seguidores em dois perfis</span>
+        </div>
+        <div class="metric">
+          <strong style="font-size:1.18rem;line-height:1.2;letter-spacing:-.03em">Do prompt ao vídeo publicado.</strong>
+          <span class="metric-note">O mesmo processo explicado nos materiais desta página.</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="resultados">
+      <div class="container">
+        <header class="showcase-head reveal">
+          <span class="eyebrow">Veja antes de comprar</span>
+          <h2>Olhe o que é possível criar.</h2>
+          <p class="lead">Imagens estáticas podem ganhar movimento, narrativa e impacto cinematográfico quando o processo é bem conduzido.</p>
+        </header>
+
+        <div class="showcase-grid">
+          <article class="showcase-card reveal">
+            <img src="img/03.png" alt="Exemplo de criação com inteligência artificial" />
+            <div class="showcase-copy">
+              <span class="eyebrow">Do conceito ao vídeo</span>
+              <h3 style="font-size:clamp(2rem,4vw,4rem);margin:14px 0 10px">Você cria a ideia.<br>A IA transforma.</h3>
+              <p>Personagens, nostalgia, carros clássicos e cenas impossíveis entram como matéria-prima para um processo prático de criação.</p>
+            </div>
+          </article>
+          <div class="showcase-side">
+            <article class="mini-visual reveal">
+              <img src="img/04.png" alt="Capa Selfies Impossíveis" />
+              <div class="mini-label">Selfies Impossíveis</div>
+            </article>
+            <article class="mini-visual reveal">
+              <img src="img/05.png" alt="Capa Transformers" />
+              <div class="mini-label">Transformers</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos">
+      <article class="product-story">
+        <div class="product-media reveal">
+          <img src="img/04.png" alt="Capa do produto Selfies Impossíveis" />
+        </div>
+        <div class="product-copy">
+          <div class="product-copy-inner reveal">
+            <span class="eyebrow">E-book completo</span>
+            <h2 style="margin-top:20px">Selfies Impossíveis</h2>
+            <p>Aprenda a criar selfies e vídeos virais com IA, nostalgia, criatividade e personagens que marcaram época.</p>
+            <ul class="feature-list">
+              <li>Construção de avatar fiel</li>
+              <li>Prompts em português e inglês</li>
+              <li>Animação no Kling</li>
+              <li>Finalização no CapCut</li>
+              <li>Fluxo pensado para redes sociais</li>
+            </ul>
+            <div class="price cyan">
+              <span class="old">De <s>R$ 49,90</s></span>
+              <span class="now">R$ 29,90</span>
+            </div>
+            <a class="btn btn-primary" href="https://hotm.io/qD1RQA9H" target="_blank" rel="noopener noreferrer" data-product="selfies">Quero aprender</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-story orange">
+        <div class="product-copy">
+          <div class="product-copy-inner reveal">
+            <span class="eyebrow orange">Do zero ao vídeo</span>
+            <h2 style="margin-top:20px">Transformers</h2>
+            <p>Transforme qualquer carro em um robô cinematográfico, preserve as características do veículo e anime toda a cena com IA.</p>
+            <ul class="feature-list">
+              <li>Criação do avatar</li>
+              <li>Imagem inicial e imagem final</li>
+              <li>Prompts de transformação</li>
+              <li>Animação no Kling</li>
+              <li>Som e montagem no CapCut</li>
+            </ul>
+            <div class="price orange">
+              <span class="old">De <s>R$ 19,90</s></span>
+              <span class="now">R$ 9,90</span>
+            </div>
+            <a class="btn btn-orange" href="https://hotm.io/iWeW1J" target="_blank" rel="noopener noreferrer" data-product="transformers">Criar meu primeiro robô</a>
+          </div>
+        </div>
+        <div class="product-media reveal">
+          <img src="img/05.png" alt="Capa do produto Transformers" />
+        </div>
+      </article>
+    </section>
+
+    <section class="section process" id="metodo">
+      <div class="container process-grid">
+        <div class="process-intro reveal">
+          <span class="eyebrow">Método simples</span>
+          <h2 style="margin-top:20px">Você não precisa ser especialista.</h2>
+          <p>O processo é dividido em etapas claras: ideia, imagem, animação e edição. Sem transformar a experiência em um curso técnico complicado.</p>
+        </div>
+
+        <div class="process-steps">
+          <article class="process-step reveal" data-step="01 — IDEIA">
+            <div class="ghost-word">IDEIA</div>
+            <h3>Escolha sua ideia.</h3>
+            <p>Defina o personagem, o carro ou a cena que deseja criar.</p>
+          </article>
+          <article class="process-step reveal" data-step="02 — IMAGEM">
+            <div class="ghost-word">FRAME</div>
+            <h3>Gere as imagens.</h3>
+            <p>Use os prompts para criar os frames iniciais e finais.</p>
+          </article>
+          <article class="process-step orange reveal" data-step="03 — MOVIMENTO">
+            <div class="ghost-word">KLI</div>
+            <h3>Anime com IA.</h3>
+            <p>Leve as imagens ao Kling e transforme tudo em movimento.</p>
+          </article>
+          <article class="process-step orange reveal" data-step="04 — FINALIZAÇÃO">
+            <div class="ghost-word">EDIT</div>
+            <h3>Edite e publique.</h3>
+            <p>Finalize no CapCut, adicione som e publique nas redes sociais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="container">
+        <header class="video-head reveal">
+          <div>
+            <span class="eyebrow">Resultados reais</span>
+            <h2 style="margin-top:18px">Assista ao que saiu desse processo.</h2>
+          </div>
+          <p>Os vídeos abaixo fazem parte do conteúdo que ajudou a alcançar mais de 15 milhões de visualizações e 50 mil seguidores em dois perfis.</p>
+        </header>
+
+        <div class="video-grid">
+          <article class="video-card reveal"><div class="video-frame"><iframe src="https://www.instagram.com/reel/DSS1t-zAZnP/embed" title="Vídeo de divulgação 1" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Cena criada com IA e direção visual.</div></article>
+          <article class="video-card reveal"><div class="video-frame"><iframe src="https://www.instagram.com/reel/Da6N2bsBayW/embed" title="Vídeo de divulgação 2" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Nostalgia transformada em conteúdo cinematográfico.</div></article>
+          <article class="video-card reveal"><div class="video-frame"><iframe src="https://www.instagram.com/reel/DSYzYdhjO9H/embed" title="Vídeo de divulgação 3" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Personagem, cenário e movimento construídos com IA.</div></article>
+          <article class="video-card reveal"><div class="video-frame"><iframe src="https://www.instagram.com/reel/DTGnZomgdEf/embed" title="Vídeo de divulgação 4" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Da imagem inicial ao frame final.</div></article>
+          <article class="video-card reveal"><div class="video-frame"><iframe src="https://www.instagram.com/reel/DbQoH08RLsD/embed" title="Vídeo de divulgação 5" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Personagem, cenário e movimento construídos com IA.</div></article>
+          <article class="video-card reveal"><div class="video-frame"><iframe src="https://www.instagram.com/reel/DbN-SBuxM1a/embed" title="Vídeo de divulgação 6" loading="lazy" allowfullscreen></iframe></div><div class="video-caption">Da imagem inicial ao frame final.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="author-card reveal">
+          <div class="author-visual"><img src="img/03.png" alt="Criações de Sandro Silva com inteligência artificial" /></div>
+          <div class="author-copy">
+            <span class="eyebrow">Quem criou</span>
+            <h2 style="font-size:clamp(2.4rem,5vw,4.5rem);margin-top:18px">Sandro Silva</h2>
+            <p>O material nasceu do uso prático de inteligência artificial para criar imagens, vídeos, nostalgia e cenas impossíveis para redes sociais.</p>
+            <p>A proposta é direta: mostrar o processo de criação sem excesso de teoria, do primeiro prompt ao vídeo publicado.</p>
+            <div class="author-stats">
+              <div><strong>+15 MM</strong><span>visualizações</span></div>
+              <div><strong>50 K</strong><span>seguidores em dois perfis</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="faq-intro reveal">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2 style="margin-top:18px">Dúvidas antes de começar?</h2>
+          <p class="lead">Aqui estão as respostas sobre o formato e o uso das ferramentas, sem promessas além do que o material oferece.</p>
+        </div>
+
+        <div class="faq reveal">
+          <details><summary>Preciso saber editar vídeos?</summary><p>Não. O material foi pensado para iniciantes e mostra o processo em etapas, com edição simples e objetiva.</p></details>
+          <details><summary>Preciso ter computador?</summary><p>Um computador oferece mais conforto, mas boa parte do processo também pode ser realizada pelo celular, dependendo das ferramentas utilizadas.</p></details>
+          <details><summary>As ferramentas de IA são gratuitas?</summary><p>Algumas possuem planos gratuitos ou créditos de teste. Outras podem exigir assinatura ou compra de créditos para determinadas funções.</p></details>
+          <details><summary>Recebo o material imediatamente?</summary><p>Após a confirmação da compra, o acesso é disponibilizado digitalmente pela plataforma Hotmart.</p></details>
+          <details><summary>Os resultados são sempre iguais?</summary><p>Não. A IA pode variar entre gerações. O material ensina como estruturar as referências, ajustar prompts e melhorar a consistência.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:30px">
+      <div class="container">
+        <div class="final-cta reveal">
+          <span class="eyebrow">Comece hoje</span>
+          <h2 style="margin-top:20px">Seu próximo vídeo impossível pode nascer agora.</h2>
+          <p>Escolha o material que mais combina com sua ideia e siga o passo a passo, do primeiro prompt ao vídeo publicado.</p>
+          <div class="final-actions">
+            <a class="btn btn-primary" href="https://hotm.io/qD1RQA9H" target="_blank" rel="noopener noreferrer">Selfies Impossíveis — R$ 29,90</a>
+            <a class="btn btn-orange" href="https://hotm.io/iWeW1J" target="_blank" rel="noopener noreferrer">Transformers — R$ 9,90</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Sandro Silva.</span>
+      <span>Produtos digitais comercializados pela Hotmart.</span>
+    </div>
+  </footer>
+
+  <a class="floating" href="#produtos">Ver produtos</a>
+
+  <script>
+    // Animações discretas de entrada. Não altera tracking nem oferta.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Preserva o clique externo e registra apenas o evento de clique no Pixel existente.
+    document.querySelectorAll('[data-product]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'ProductClick', { product: link.dataset.product });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
