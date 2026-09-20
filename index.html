@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aprenda a criar vídeos impossíveis com inteligência artificial, nostalgia, carros clássicos e efeitos cinematográficos." />
+  <meta name="description" content="Aprenda a transformar ideias em vídeos com inteligência artificial na Vivencia Academy. Conheça o curso Do Zero ao Take e outros materiais práticos." />
   <meta name="theme-color" content="#07090d" />
-  <title>Sandro Silva | Vídeos Impossíveis com IA</title>
+  <title>Vivencia Academy | Do Zero ao Take</title>
 
   <!-- Meta Pixel Code - preservado -->
   <script>
@@ -73,8 +74,9 @@
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-weight:900;letter-spacing:.08em;font-size:.98rem}
-    .brand span{color:var(--cyan)}
+     .brand{display:flex;align-items:center;line-height:0}
+    .brand img{display:block;width:auto;height:38px;max-width:210px;object-fit:contain}
+    @media (max-width:680px){.brand img{height:31px;max-width:170px}}
     .nav-links{display:flex;align-items:center;gap:22px;color:#c7d0db;font-size:.88rem}
     .nav-links a:not(.btn):hover{color:#fff}
 
@@ -297,7 +299,7 @@
 
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#inicio">SANDRO <span>IA</span></a>
+      <a class="brand" href="#inicio" aria-label="Vivencia Academy"><img src="img/logo.png" alt="Vivencia Academy" /></a>
       <nav class="nav-links" aria-label="Navegação principal">
         <a href="#resultados">Resultados</a>
         <a href="#produtos">Produtos</a>
@@ -325,7 +327,7 @@
             usando prompts, animação e edição simples — mesmo começando do zero.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#produtos">Quero criar meu primeiro vídeo</a>
+            <a class="btn btn-primary" href="#produtos">Conhecer o Do Zero ao Take</a>
             <a class="btn btn-ghost" href="#resultados">Ver os resultados</a>
           </div>
           <div class="micro-proof">
@@ -364,11 +366,11 @@
 
         <div class="showcase-grid">
           <article class="showcase-card reveal">
-            <img src="img/03.png" alt="Exemplo de criação com inteligência artificial" />
+            <img src="img/00_1.png" alt="Do Zero ao Take — curso da Vivencia Academy" />
             <div class="showcase-copy">
-              <span class="eyebrow">Do conceito ao vídeo</span>
-              <h3 style="font-size:clamp(2rem,4vw,4rem);margin:14px 0 10px">Você cria a ideia.<br>A IA transforma.</h3>
-              <p>Personagens, nostalgia, carros clássicos e cenas impossíveis entram como matéria-prima para um processo prático de criação.</p>
+              <span class="eyebrow">Novo curso • Vivencia Academy</span>
+              <h3 style="font-size:clamp(2rem,4vw,4rem);margin:14px 0 10px">Do Zero ao Take</h3>
+              <p>Um caminho completo da ideia ao vídeo final: storytelling, prompts, personagens, cenários, geração de cenas e edição.</p>
             </div>
           </article>
           <div class="showcase-side">
@@ -388,11 +390,37 @@
     <section id="produtos">
       <article class="product-story">
         <div class="product-media reveal">
+          <img src="img/00.png" alt="Capa do curso Do Zero ao Take" />
+        </div>
+        <div class="product-copy">
+          <div class="product-copy-inner reveal">
+            <span class="eyebrow">Curso completo • Vivencia Academy</span>
+            <h2 style="margin-top:20px">Do Zero ao Take</h2>
+            <p>Transforme uma ideia em vídeo com inteligência artificial. Um curso prático, direto e completo, acompanhando um projeto do conceito ao resultado final.</p>
+            <ul class="feature-list">
+              <li>Storytelling, roteiro e storyboard</li>
+              <li>Prompts claros e estruturados</li>
+              <li>Personagens, character sheet e consistência</li>
+              <li>Criação de cenários e geração das cenas</li>
+              <li>Edição e vídeo final</li>
+              <li>7 aulas • mais de 2h35 de conteúdo</li>
+            </ul>
+            <div class="price cyan">
+              <span class="old">De <s>R$ 179,90</s></span>
+              <span class="now">R$ 89,90</span>
+            </div>
+            <a class="btn btn-primary" href="https://go.hotmart.com/N107694465V" target="_blank" rel="noopener noreferrer" data-product="do-zero-ao-take">Quero começar agora</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-story orange">
+        <div class="product-media reveal">
           <img src="img/04.png" alt="Capa do produto Selfies Impossíveis" />
         </div>
         <div class="product-copy">
           <div class="product-copy-inner reveal">
-            <span class="eyebrow">E-book completo</span>
+            <span class="eyebrow orange">E-book completo</span>
             <h2 style="margin-top:20px">Selfies Impossíveis</h2>
             <p>Aprenda a criar selfies e vídeos virais com IA, nostalgia, criatividade e personagens que marcaram época.</p>
             <ul class="feature-list">
@@ -406,15 +434,15 @@
               <span class="old">De <s>R$ 49,90</s></span>
               <span class="now">R$ 29,90</span>
             </div>
-            <a class="btn btn-primary" href="https://hotm.io/qD1RQA9H" target="_blank" rel="noopener noreferrer" data-product="selfies">Quero aprender</a>
+            <a class="btn btn-orange" href="https://hotm.io/qD1RQA9H" target="_blank" rel="noopener noreferrer" data-product="selfies">Quero aprender</a>
           </div>
         </div>
       </article>
 
-      <article class="product-story orange">
+      <article class="product-story">
         <div class="product-copy">
           <div class="product-copy-inner reveal">
-            <span class="eyebrow orange">Do zero ao vídeo</span>
+            <span class="eyebrow">Do zero ao vídeo</span>
             <h2 style="margin-top:20px">Transformers</h2>
             <p>Transforme qualquer carro em um robô cinematográfico, preserve as características do veículo e anime toda a cena com IA.</p>
             <ul class="feature-list">
@@ -428,7 +456,7 @@
               <span class="old">De <s>R$ 19,90</s></span>
               <span class="now">R$ 9,90</span>
             </div>
-            <a class="btn btn-orange" href="https://hotm.io/iWeW1J" target="_blank" rel="noopener noreferrer" data-product="transformers">Criar meu primeiro robô</a>
+            <a class="btn btn-primary" href="https://hotm.io/iWeW1J" target="_blank" rel="noopener noreferrer" data-product="transformers">Criar meu primeiro robô</a>
           </div>
         </div>
         <div class="product-media reveal">
@@ -531,11 +559,12 @@
       <div class="container">
         <div class="final-cta reveal">
           <span class="eyebrow">Comece hoje</span>
-          <h2 style="margin-top:20px">Seu próximo vídeo impossível pode nascer agora.</h2>
-          <p>Escolha o material que mais combina com sua ideia e siga o passo a passo, do primeiro prompt ao vídeo publicado.</p>
+          <h2 style="margin-top:20px">Sua próxima ideia pode virar vídeo agora.</h2>
+          <p>Comece pelo curso Do Zero ao Take ou escolha um dos materiais práticos da Vivencia Academy.</p>
           <div class="final-actions">
-            <a class="btn btn-primary" href="https://hotm.io/qD1RQA9H" target="_blank" rel="noopener noreferrer">Selfies Impossíveis — R$ 29,90</a>
-            <a class="btn btn-orange" href="https://hotm.io/iWeW1J" target="_blank" rel="noopener noreferrer">Transformers — R$ 9,90</a>
+            <a class="btn btn-primary" href="https://go.hotmart.com/N107694465V" target="_blank" rel="noopener noreferrer">Do Zero ao Take — R$ 89,90</a>
+            <a class="btn btn-ghost" href="https://hotm.io/qD1RQA9H" target="_blank" rel="noopener noreferrer">Selfies Impossíveis — R$ 29,90</a>
+            <a class="btn btn-ghost" href="https://hotm.io/iWeW1J" target="_blank" rel="noopener noreferrer">Transformers — R$ 9,90</a>
           </div>
         </div>
       </div>
@@ -544,7 +573,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 Sandro Silva.</span>
+      <span>© 2026 Vivencia Academy • Sandro Silva.</span>
       <span>Produtos digitais comercializados pela Hotmart.</span>
     </div>
   </footer>
